@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input {
+        border: 1px solid #999;
+        outline: none;
+      }
+
+      input:focus {
+        border: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mb-4">
+      <nav class="navbar navbar-expand-lg bg-light justify-content-between">
+        <div class="container-fluid gap-5">
+          <h2 id="student-name">Student Name</h2>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+
+              <div class="d-flex sm-flex-column gap-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link p-2 bg-primary text-white btn"
+                    href="index.html"
+                    >Sign out</a
+                  >
+                </li>
+
+                <li class="nav-item check-again ml-3">
+                  <a
+                    class="nav-link p-2 bg-primary text-white btn continue"
+                    href="javascript:window.top.location.reload(true)"
+                    >Check Again</a
+                  >
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- marks -->
+    <div class="container">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Marks</th>
+            <th scope="col">Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- subject 1 maths -->
+          <tr>
+            <th scope="row">1</th>
+            <td>Math</td>
+            <td>
+              <input
+                type="number"
+                class="outline-none border-none overflow-hidden p-1 maths hundred"
+                placeholder="Write marks 1-100"
+              />
+              <span id="math-100"></span>
+            </td>
+            <td id="mathstatus">Pass/Fail</td>
+          </tr>
+
+          <!-- subject 2 computer -->
+          <tr>
+            <th scope="row">2</th>
+            <td>Computer</td>
+            <td>
+              <input
+                type="number"
+                class="outline-none border-none overflow-hidden computer hundred"
+                placeholder="Write marks 1-100"
+              />
+            </td>
+            <td id="compstatus">Pass/Fail</td>
+          </tr>
+
+          <!-- subject 3 english -->
+          <tr>
+            <th scope="row">4</th>
+            <td>English</td>
+            <td>
+              <input
+                type="number"
+                class="outline-none border-none overflow-hidden english hundred"
+                placeholder="write marsk 1-100"
+              />
+            </td>
+            <td id="engstatus">Pass/Fail</td>
+          </tr>
+
+          <!-- subject 4 urdu -->
+          <tr>
+            <th scope="row">5</th>
+            <td>Urdu</td>
+            <td>
+              <input
+                type="number"
+                class="outline-none border-none overflow-hidden urdu hundred"
+                placeholder="Write marks 1-100 "
+              />
+            </td>
+            <td id="urdustatus">Pass/Fail</td>
+          </tr>
+
+          <!-- subject 5 stats -->
+          <tr>
+            <th scope="row">3</th>
+            <td>Stats</td>
+            <td>
+              <input
+                type="number"
+                class="outline-none border-none overflow-hidden stats fifty"
+                placeholder="write marks 1-50"
+              />
+            </td>
+            <td id="statstatus">Pass/Fail</td>
+          </tr>
+
+          <!-- subject 6 Pakstudy -->
+          <tr>
+            <th scope="row">6</th>
+            <td>Studies</td>
+            <td>
+              <input
+                type="number"
+                class="outline-none border-none overflow-hidden study fifty"
+                placeholder="write marks 1-50"
+              />
+            </td>
+            <td id="studystatus">Pass/Fail</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- check result button -->
+      <div class="d-flex justify-content-center mx-auto mb-3">
+        <button
+          class="btn btn-primary w-50"
+          id="result"
+          type="submit"
+          onclick="check()"
+        >
+          Calculate Result
+        </button>
+      </div>
+
+      <!-- final result tabkle -->
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Total Marks</th>
+            <th scope="col">Obtained</th>
+            <th scope="col">%age</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">500</th>
+            <td id="obtainedMarks"></td>
+            <td id="percent"></td>
+            <td id="status"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
